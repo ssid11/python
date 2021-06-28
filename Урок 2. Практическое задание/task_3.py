@@ -40,5 +40,5 @@ else:
     val = ''
     for i in reverse_val:
         val +=  str(i)
-    print(f"перевернутое число:{val}")
+    print(f"Перевернутое число:{val}")
 

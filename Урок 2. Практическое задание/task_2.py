@@ -32,5 +32,5 @@ def recursion(val,cnt):
     recursion(val // 10,cnt)
 
 res_lst = [0,0]
-recursion(2,res_lst)
+recursion(12121212121212,res_lst)
 print(f"Количество четных и нечетных цифр в числе равно: {tuple(res_lst)}")
