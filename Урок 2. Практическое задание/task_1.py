@@ -33,13 +33,22 @@ def eval_rec():
     op = input('Введите операцию (+, -, *, / или 0 для выхода):')
     if op == '0':
         print('Работа закончена.')
-        return
+        exit(0)
     if op not in op_lst:
-        print("Вы ошиблись при вводе операции. Введите операцию заново")
+        print("Вы ошиблись при вводе операции. Попробуйте еще")
         eval_rec()
     arg1 = (input('Введите первое число:'))
     arg2 = (input('Введите второе число:'))
-    print( f"Ваш результат {eval(arg1 + op + arg2)}")
-    eval_rec()
+    try:
+        print( f"Ваш результат {eval(arg1 + op + arg2)}")
+        eval_rec()
+    except NameError:
+        print('Одно или оба числа введены неверно. Попытайтесь снова.')
+        eval_rec()
+    except ZeroDivisionError:
+        print("Вы ошиблись, делить на ноль нельзя. Начните сначала")
+        eval_rec()
+    else:
+        eval_rec()
 
 eval_rec()
